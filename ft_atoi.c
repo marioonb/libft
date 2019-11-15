@@ -3,18 +3,18 @@
 /*                                                        :::      ::::::::   */
 /*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mbelorge <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: mbelorge <mbelorge@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/04 16:36:24 by mbelorge          #+#    #+#             */
-/*   Updated: 2019/11/05 17:22:14 by mbelorge         ###   ########.fr       */
+/*   Updated: 2019/11/15 19:08:56 by mbelorge         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 int		ft_atoi(const char *str)
 {
-	long long int i;
-	unsigned long long int a;
-	unsigned long long int nb;
+	int i;
+	int a;
+	int nb;
 
 	i = 0;
 	a = 1;
@@ -22,21 +22,21 @@ int		ft_atoi(const char *str)
 	while (str[i] == '\t' || str[i] == '\v' || str[i] == '\n' || str[i] == '\f'
 			|| str[i] == '\r' || str[i] == ' ')
 		i++;
-	
-	while (str[i] == '-' || str[i] == '+')
+	if (str[i] == '-' || str[i] == '+')
+	{
+		if (str[i] == '-')
 		{
-			if (str[i] == '-')
 			a = -1;
 			i++; 
 		}
-	
-
+		else
+			i++; 
+	}
 	while (str[i] >= '0' && str[i] <= '9')
 	{
 		nb = nb * 10;
 		nb = nb + str[i] - 48;
 		i++;
-	}
-	
-		return (nb * a); 
+	}	
+		return (nb * a);
 }

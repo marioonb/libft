@@ -1,15 +1,24 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_memcmp.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mbelorge <mbelorge@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2019/11/15 19:00:20 by mbelorge          #+#    #+#             */
+/*   Updated: 2019/11/15 19:00:23 by mbelorge         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
 #include <string.h>
 
-int	ft_memcmp(const void*s1, const void*s2, size_t size)
+int		ft_memcmp(const void*s1, const void*s2, size_t size)
 {
 	size_t i;
-    unsigned char*premiere; 
- 	unsigned char*deuxieme; 
-
-    premiere = (unsigned char*)s1;
-    deuxieme = (unsigned char*)s2;  
-
+    unsigned char*premiere;
+ 	unsigned char*deuxieme;
+	premiere = (unsigned char*)s1;
+    deuxieme = (unsigned char*)s2;
 
 	i = 0;
 	if (premiere[i] == 0 && deuxieme[i] == 0 && size == 0)

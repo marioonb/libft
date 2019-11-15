@@ -12,9 +12,22 @@ de chaines de caracteres obtenu en séparant s à
 l’aide du caractère c, utilisé comme délimiteur. Le
 tableau doit être terminé par NULL.*/
 
+int     comptword (char *s, char c)
+{
+    int word; 
+    int i; 
+
+    word= 1; 
+    i = 0; 
+    while (s[i])
+    {
+        if (s[i] == c)
+            word ++;
+        i++;
+    }
+    return (word); 
+}
+
 char **ft_split(char const *s, char c)
 {
-
-
-
 }

@@ -3,17 +3,17 @@
 /*                                                        :::      ::::::::   */
 /*   ft_tolower.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mbelorge <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: mbelorge <mbelorge@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/04 15:43:01 by mbelorge          #+#    #+#             */
-/*   Updated: 2019/11/06 15:22:42 by mbelorge         ###   ########.fr       */
+/*   Updated: 2019/11/15 18:42:55 by mbelorge         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_tolower(int c)
+int		ft_tolower(int c)
 {
 	if (c >= 'A' && c <= 'Z')
 		return (c + 32);
 	else
-		return (c);
+		return(c);
 }
