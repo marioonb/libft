@@ -6,11 +6,11 @@
 /*   By: mbelorge <mbelorge@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/04 16:25:56 by mbelorge          #+#    #+#             */
-/*   Updated: 2019/11/15 19:17:58 by mbelorge         ###   ########.fr       */
+/*   Updated: 2019/11/18 13:55:42 by mbelorge         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <string.h>
+#include "libft.h"
 
 void	ft_bzero(void *s, size_t n)
 {

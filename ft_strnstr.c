@@ -6,35 +6,36 @@
 /*   By: mbelorge <mbelorge@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/05 12:35:36 by mbelorge          #+#    #+#             */
-/*   Updated: 2019/11/15 18:50:13 by mbelorge         ###   ########.fr       */
+/*   Updated: 2019/11/18 14:05:57 by mbelorge         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <string.h>
+#include "libft.h"
 
-char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
+char		*ft_strnstr(const char *haystack, const char *needle, size_t len)
 {
-	size_t i;
-	char*meule; 
-	char*aiguille;
-	size_t j; 
+	size_t	i;
+	char	*meule;
+	char	*aiguille;
+	size_t	j;
 
-	i = 0; 
-	j = 0; 
-	meule = (char*)haystack; 
-    aiguille = (char*)needle;  
+	i = 0;
+	j = 0;
+	meule = (char*)haystack;
+	aiguille = (char*)needle;
 	if (aiguille[0] == '\0')
 		return (meule);
- 	while (*meule && len >= j)
+	while (*meule && len >= j)
 	{
 		if (len == j)
-    		return (0);
+			return (0);
 		while (meule[i] == aiguille[i] && aiguille[i])
-			i++; j++; 
+			i++;
+		j++;
 		if (aiguille[i] == '\0')
 			return (meule);
-		meule++; 
-		j++; 
+		meule++;
+		j++;
 	}
 	return (0);
 }

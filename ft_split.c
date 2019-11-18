@@ -1,33 +1,73 @@
-/* 
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_split.c                                         :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mbelorge <mbelorge@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2019/11/18 11:48:30 by mbelorge          #+#    #+#             */
+/*   Updated: 2019/11/18 14:15:36 by mbelorge         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
-#1. La chaine de caractères à découper.
-#2. Le caractère délimitant.
+#include "libft.h"
 
-Valeur de retour Le tableau de nouvelles chaines de caractères,
-résultant du découpage. NULL si l’allocation
-échoue.
-
-Description Alloue (avec malloc(3)) et retourne un tableau
-de chaines de caracteres obtenu en séparant s à
-l’aide du caractère c, utilisé comme délimiteur. Le
-tableau doit être terminé par NULL.*/
-
-int     comptword (char *s, char c)
+static int	comptword(char *s, char c)
 {
-    int word; 
-    int i; 
+	int i;
+	int word;
 
-    word= 1; 
-    i = 0; 
-    while (s[i])
-    {
-        if (s[i] == c)
-            word ++;
-        i++;
-    }
-    return (word); 
+	i = 0;
+	word = 0;
+	while (s[i] && s[i] == c)
+		i++;
+	while (s[i])
+	{
+		while (s[i] != c)
+			i++;
+		word++;
+		while (s[i] == c)
+			i++;
+	}
+	return (word);
 }
 
-char **ft_split(char const *s, char c)
+static int	comptcaractere(char *s, char c)
 {
+	int i;
+
+	i = 0;
+	while (s[i] != c && s[i] != '\0')
+		i++;
+	return (i);
+}
+
+char		**ft_split(char const *s, char c)
+{
+	char	**resultat;
+	int		caractere;
+	int		word;
+	int		i;
+
+	i = 0;
+	caractere = 0;
+	if (!s)
+		return (0);
+	word = comptword((char*)s, c);
+	resultat = (char**)malloc(sizeof(char*) * (word + 1));
+	if (!resultat)
+		return (NULL);
+	while (i < word)
+	{
+		caractere = 0;
+		while (*s && *s == c)
+			s++;
+		caractere = comptcaractere((char*)s, c);
+		resultat[i] = ft_substr(s, 0, caractere);
+		while (*s && *s != c)
+			s++;
+		i++;
+	}
+	resultat[i] = NULL;
+	return (resultat);
 }

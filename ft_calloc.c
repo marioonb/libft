@@ -1,31 +1,27 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_calloc.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mbelorge <mbelorge@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2019/11/18 11:37:19 by mbelorge          #+#    #+#             */
+/*   Updated: 2019/11/18 14:50:01 by mbelorge         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
-#include <string.h>
-#include <stdlib.h>
+#include "libft.h"
 
-void    *ft_calloc(size_t count, size_t size)
+void		*ft_calloc(size_t count, size_t size)
 {
-    int *pointeur;
-    size_t i;
+	int		*pointeur;
+	size_t	i;
 
-    pointeur = NULL;   
-    i = 0;
-   // if (count == 0)
-    //   count = 1; 
-    pointeur = malloc(count * size);
-    // if (count == 0)
-   // if (size == 0)
-    //  return(pointeur); 
-        if (pointeur == NULL)
-        return (0); 
-
-    while (i <= count)
-	{
-		((char*)pointeur)[i] = 0;
-		i++;
-	}
+	pointeur = NULL;
+	i = 0;
+	pointeur = malloc(count * size);
+	if (pointeur == NULL)
+		return (0);
+	ft_bzero(pointeur, size * count);
 	return (pointeur);
 }
-
-
-		
-
