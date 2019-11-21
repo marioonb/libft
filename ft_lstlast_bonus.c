@@ -1,35 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlcat.c                                       :+:      :+:    :+:   */
+/*   ft_lstlast_bonus.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mbelorge <mbelorge@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/11/13 11:15:04 by mbelorge          #+#    #+#             */
-/*   Updated: 2019/11/20 14:43:11 by mbelorge         ###   ########.fr       */
+/*   Created: 2019/11/19 11:22:48 by mbelorge          #+#    #+#             */
+/*   Updated: 2019/11/20 18:24:03 by mbelorge         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
+t_list	*ft_lstlast(t_list *lst)
 {
-	int		taille;
-	size_t	i;
-	int		j;
+	t_list *temp;
 
-	i = 0;
-	j = 0;
-	taille = ft_strlen(dst);
-	while (i < dstsize && dst[i])
-		i++;
-	if (i == dstsize)
-		return (ft_strlen(src) + i);
-	while (i + j < dstsize - 1 && src[j])
+	if (lst == NULL)
+		return (0);
+	else
 	{
-		dst[i + j] = src[j];
-		j++;
+		temp = lst;
+		while (temp->next != NULL)
+			temp = temp->next;
+		return (temp);
 	}
-	dst[i + j] = '\0';
-	return (ft_strlen(src) + taille);
 }

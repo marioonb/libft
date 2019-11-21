@@ -6,7 +6,7 @@
 /*   By: mbelorge <mbelorge@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/15 18:53:41 by mbelorge          #+#    #+#             */
-/*   Updated: 2019/11/18 14:10:38 by mbelorge         ###   ########.fr       */
+/*   Updated: 2019/11/20 13:05:59 by mbelorge         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,7 @@ char	*concatene(const char *s1, const char *s2, char *resultat)
 		chaine[i + j] = s2[j];
 		j++;
 	}
+	chaine[i + j] = '\0';
 	return (chaine);
 }
 
@@ -40,7 +41,8 @@ char	*ft_strjoin(char const *s1, char const *s2)
 {
 	char *resultat;
 
-	resultat = (char*)malloc(sizeof(char) * (ft_strlen(s1) + ft_strlen(s2)));
+	resultat = (char*)malloc(sizeof(char) * (ft_strlen(s1)
+	+ ft_strlen(s2) + 1));
 	if (!resultat)
 		return (0);
 	resultat = concatene(s1, s2, resultat);

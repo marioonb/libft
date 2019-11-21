@@ -6,7 +6,7 @@
 /*   By: mbelorge <mbelorge@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/18 11:48:30 by mbelorge          #+#    #+#             */
-/*   Updated: 2019/11/18 14:15:36 by mbelorge         ###   ########.fr       */
+/*   Updated: 2019/11/20 14:09:49 by mbelorge         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,20 +14,23 @@
 
 static int	comptword(char *s, char c)
 {
-	int i;
-	int word;
+	int		word;
+	int		i;
 
-	i = 0;
 	word = 0;
-	while (s[i] && s[i] == c)
-		i++;
-	while (s[i])
+	i = 0;
+	if (*s == '\0')
+		return (0);
+	while (*s != '\0')
 	{
-		while (s[i] != c)
-			i++;
-		word++;
-		while (s[i] == c)
-			i++;
+		if (*s == c)
+			i = 0;
+		else if (i == 0)
+		{
+			i = 1;
+			word++;
+		}
+		s++;
 	}
 	return (word);
 }
@@ -50,13 +53,12 @@ char		**ft_split(char const *s, char c)
 	int		i;
 
 	i = 0;
-	caractere = 0;
 	if (!s)
 		return (0);
 	word = comptword((char*)s, c);
 	resultat = (char**)malloc(sizeof(char*) * (word + 1));
 	if (!resultat)
-		return (NULL);
+		return (0);
 	while (i < word)
 	{
 		caractere = 0;
