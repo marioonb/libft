@@ -6,7 +6,7 @@
 /*   By: mbelorge <mbelorge@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/18 11:37:19 by mbelorge          #+#    #+#             */
-/*   Updated: 2019/11/18 14:50:01 by mbelorge         ###   ########.fr       */
+/*   Updated: 2019/11/21 16:04:10 by mbelorge         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,12 +16,15 @@ void		*ft_calloc(size_t count, size_t size)
 {
 	int		*pointeur;
 	size_t	i;
+	int		s;
 
-	pointeur = NULL;
+	s = count * size;
+	if (s == 0)
+		s = 1;
 	i = 0;
-	pointeur = malloc(count * size);
+	pointeur = malloc(s);
 	if (pointeur == NULL)
 		return (0);
-	ft_bzero(pointeur, size * count);
+	ft_bzero(pointeur, s);
 	return (pointeur);
 }

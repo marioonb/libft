@@ -6,7 +6,7 @@
 /*   By: mbelorge <mbelorge@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/15 19:24:08 by mbelorge          #+#    #+#             */
-/*   Updated: 2019/11/18 14:07:25 by mbelorge         ###   ########.fr       */
+/*   Updated: 2019/11/21 16:44:38 by mbelorge         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 	i = 0;
 	if (s == '\0')
 		return (0);
-	result = malloc(sizeof(*s) * ft_strlen(s) + 1);
+	result = malloc(sizeof(*s) * (ft_strlen(s) + 1));
 	if (!result)
 		return (0);
 	while (s[i])

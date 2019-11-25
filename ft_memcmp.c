@@ -6,7 +6,7 @@
 /*   By: mbelorge <mbelorge@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/15 19:00:20 by mbelorge          #+#    #+#             */
-/*   Updated: 2019/11/19 10:54:20 by mbelorge         ###   ########.fr       */
+/*   Updated: 2019/11/21 17:25:45 by mbelorge         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,18 +14,18 @@
 
 int					ft_memcmp(const void *s1, const void *s2, size_t size)
 {
-	size_t			i;
-	unsigned char	*premiere;
-	unsigned char	*deuxieme;
+	char	*str1;
+	char	*str2;
+	size_t	i;
 
-	premiere = (unsigned char*)s1;
-	deuxieme = (unsigned char*)s2;
 	i = 0;
-	if (premiere[i] == 0 && deuxieme[i] == 0 && size == 0)
-		return (0);
-	while (premiere[i] == deuxieme[i] && i < size - 1)
+	str1 = (char *)s1;
+	str2 = (char *)s2;
+	while (i < size)
+	{
+		if (str1[i] != str2[i])
+			return ((unsigned char)str1[i] - (unsigned char)str2[i]);
 		i++;
-	if (i == size)
-		return (0);
-	return (((unsigned int)premiere[i]) - ((unsigned int)deuxieme[i]));
+	}
+	return (0);
 }

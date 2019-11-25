@@ -6,7 +6,7 @@
 /*   By: mbelorge <mbelorge@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/15 19:01:11 by mbelorge          #+#    #+#             */
-/*   Updated: 2019/11/18 13:56:07 by mbelorge         ###   ########.fr       */
+/*   Updated: 2019/11/25 15:45:55 by mbelorge         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ void				*ft_memccpy(void *restrict dst, const void *restrict src,
 	{
 		dest[i] = source[i];
 		if (source[i] == (unsigned char)c)
-			return (dest + i + 1);
+			return (dst + i + 1);
 		i++;
 	}
 	return (NULL);

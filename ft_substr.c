@@ -6,22 +6,35 @@
 /*   By: mbelorge <mbelorge@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/18 11:55:48 by mbelorge          #+#    #+#             */
-/*   Updated: 2019/11/18 14:09:00 by mbelorge         ###   ########.fr       */
+/*   Updated: 2019/11/21 16:08:50 by mbelorge         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char		*ft_substr(char const *s, unsigned int star, size_t len)
+static size_t	ft_length(char const *s, unsigned int star, size_t len)
 {
-	char	*resultat;
-	size_t	i;
-	size_t	j;
+	size_t		i;
+
+	i = 0;
+	while (s[star] != '\0' && i < len)
+	{
+		star++;
+		i++;
+	}
+	return (i);
+}
+
+char			*ft_substr(char const *s, unsigned int star, size_t len)
+{
+	char		*resultat;
+	size_t		i;
+	size_t		j;
 
 	resultat = NULL;
 	i = 0;
 	j = 0;
-	resultat = malloc(sizeof(char) * len + 1);
+	resultat = malloc(sizeof(char) * (ft_length(s, star, len) + 1));
 	if (!resultat)
 		return (0);
 	while (s[i] != '\0' && len > 0)

@@ -6,7 +6,7 @@
 /*   By: mbelorge <mbelorge@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/15 18:46:36 by mbelorge          #+#    #+#             */
-/*   Updated: 2019/11/19 14:10:48 by mbelorge         ###   ########.fr       */
+/*   Updated: 2019/11/21 16:44:55 by mbelorge         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ char		*ft_strtrim(char const *s1, char const *set)
 
 	i = 0;
 	k = 0;
-	result = (malloc(sizeof(char) * ft_strlen(s1) + 1));
+	result = (malloc(sizeof(char) * (ft_strlen(s1) + 1)));
 	if (!result)
 		return (0);
 	while (chercheset(s1[i], (char*)set))
