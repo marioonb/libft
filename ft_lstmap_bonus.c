@@ -6,7 +6,7 @@
 /*   By: mbelorge <mbelorge@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/25 14:27:15 by mbelorge          #+#    #+#             */
-/*   Updated: 2019/11/25 15:51:14 by mbelorge         ###   ########.fr       */
+/*   Updated: 2019/12/02 11:10:21 by mbelorge         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,8 @@
 
 t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 {
-	
-	lst = 0; 
-	del(lst); 
-	f(lst); 
+	lst = 0;
+	del(lst);
+	f(lst);
 	return (0);
 }

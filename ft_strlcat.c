@@ -6,36 +6,35 @@
 /*   By: mbelorge <mbelorge@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/13 11:15:04 by mbelorge          #+#    #+#             */
-/*   Updated: 2019/11/25 13:57:44 by mbelorge         ###   ########.fr       */
+/*   Updated: 2019/12/03 12:56:46 by mbelorge         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_strlcat(char *dest, const char *src, size_t dstsize)
+size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
 {
-	int				i;
-	
-	unsigned int	j;
-	unsigned int	k;
+	size_t	i;
+	size_t	j;
+	size_t	k;
 
 	j = 0;
 	i = 0;
 	k = 0;
-	while (src[i])
-		i++;
-	if (dstsize == 0)
-		return (i);
-	while (k < dstsize && dest[k])
-		k++;
-	if (dstsize <= k)
-		return (dstsize + i);
-	j = 0;
-	while (dstsize && (--dstsize - k) && src[j])
-	{
-		dest[k + j] = src[j];
+	while (dst[j] != '\0')
 		j++;
+	while (src[i] != '\0' && j + i < dstsize - 1)
+	{
+		if (dstsize != 0)
+			dst[j + i] = src[i];
+		i++;
+		k++;
 	}
-	dest[k + j] = '\0';
-	return (i + k);
+	if (dstsize != 0)
+		dst[j + i] = '\0';
+	while (src[k] != '\0')
+		k++;
+	if (dstsize < j)
+		return (k + dstsize);
+	return (j + k);
 }
