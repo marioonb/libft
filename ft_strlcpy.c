@@ -6,7 +6,7 @@
 /*   By: mbelorge <mbelorge@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/05 12:57:41 by mbelorge          #+#    #+#             */
-/*   Updated: 2019/12/03 12:32:27 by mbelorge         ###   ########.fr       */
+/*   Updated: 2019/12/04 10:52:24 by mbelorge         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ size_t		ft_strlcpy(char *dst, const char *src, size_t dstsize)
 	size_t	i;
 	size_t	j;
 
-	if (size == 0)
+	if (dstsize == 0)
 		return (ft_strlen(src));
 	i = 0;
 	j = 0;
