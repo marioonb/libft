@@ -58,8 +58,11 @@ void				*ft_memcpy (void *dst, const void *src, size_t n);
 void				*ft_memchr (const void *s, int c, size_t n);
 int					ft_memcmp (const void *s1, const void *s2, size_t n);
 void				ft_putchar_fd (char c, int fd);
+void				ft_putchar (char c);
 void				ft_putstr_fd (char *s, int fd);
+void				ft_putstr(char *s);
 void				ft_putnbr_fd(int n, int fd);
+void				ft_putnbr(int n); 
 void				ft_putendl_fd(char *s, int fd);
 char				*ft_substr(char const *s, unsigned int start, size_t len);
 char				*ft_strjoin(char const *s1, char const *s2);
@@ -68,5 +71,10 @@ char				**ft_split(char const *s, char c);
 char				*ft_itoa(int n);
 char				*ft_strmapi(char const *s, char (*f)(unsigned int, char));
 char				*ft_strtrim(char const *s1, char const *set);
+char				*ft_strcpy(char *dest, char *src); 
+char				*ft_strncpy(char *dest, char *src, unsigned int n); 
+char    			*ft_itoa_base(int nbr, int base); 
+char				*ft_strlowcase(char *str); 
+char				*ft_strupcase(char *str); 
 
 #endif
