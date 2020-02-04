@@ -1,19 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_itoa_base.c                                     :+:      :+:    :+:   */
+/*   ft_itoa_base_unsigned.c                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mbelorge <mbelorge@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/01/03 16:14:08 by mbelorge          #+#    #+#             */
-/*   Updated: 2020/01/03 17:13:41 by mbelorge         ###   ########.fr       */
+/*   Created: 2020/01/03 16:14:02 by mbelorge          #+#    #+#             */
+/*   Updated: 2020/01/03 17:18:25 by mbelorge         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdio.h>
 
-static int	convertletter(int nb)
+static int			convertletter_un(int nb)
 {
 	if (nb >= 10)
 		return (nb - 10 + 'a');
@@ -21,15 +20,15 @@ static int	convertletter(int nb)
 		return (nb + '0');
 }
 
-char		*ft_itoa_base(int value, int base)
+char				*ft_itoa_base_unsigned(unsigned int value, int base)
 {
-	int		i;
-	char	*str;
-	int		tmp;
+	int				i;
+	char			*str;
+	unsigned int	tmp;
 
 	i = 0;
 	tmp = value;
-	while (tmp >= base)
+	while (tmp >= (unsigned int)base)
 	{
 		tmp = tmp / base;
 		i++;
@@ -40,7 +39,7 @@ char		*ft_itoa_base(int value, int base)
 	while (i >= 0)
 	{
 		tmp = value % base;
-		str[i] = convertletter(tmp);
+		str[i] = convertletter_un(tmp);
 		value /= base;
 		i--;
 	}

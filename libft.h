@@ -6,7 +6,7 @@
 /*   By: mbelorge <mbelorge@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/04 16:53:29 by mbelorge          #+#    #+#             */
-/*   Updated: 2019/11/25 15:50:55 by mbelorge         ###   ########.fr       */
+/*   Updated: 2020/01/03 17:17:24 by mbelorge         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,7 +62,7 @@ void				ft_putchar (char c);
 void				ft_putstr_fd (char *s, int fd);
 void				ft_putstr(char *s);
 void				ft_putnbr_fd(int n, int fd);
-void				ft_putnbr(int n); 
+void				ft_putnbr(int n);
 void				ft_putendl_fd(char *s, int fd);
 char				*ft_substr(char const *s, unsigned int start, size_t len);
 char				*ft_strjoin(char const *s1, char const *s2);
@@ -71,10 +71,15 @@ char				**ft_split(char const *s, char c);
 char				*ft_itoa(int n);
 char				*ft_strmapi(char const *s, char (*f)(unsigned int, char));
 char				*ft_strtrim(char const *s1, char const *set);
-char				*ft_strcpy(char *dest, char *src); 
-char				*ft_strncpy(char *dest, char *src, unsigned int n); 
-char    			*ft_itoa_base(int nbr, int base); 
-char				*ft_strlowcase(char *str); 
-char				*ft_strupcase(char *str); 
+char				*ft_strcpy(char *dest, char *src);
+char				*ft_strncpy(char *dest, char *src, unsigned int n);
+char				*ft_itoa_base(int nbr, int base);
+char				*ft_itoa_base_unsigned(unsigned int nombre, int base);
+char				*ft_strlowcase(char *str);
+char				*ft_strupcase(char *str);
+char				*itoa_base_pointeur (void *p);
+char				*ft_strlowcase(char *str);
+int					ft_putchar_return(char c);
+int					ft_putstr_return(char *str);
 
 #endif

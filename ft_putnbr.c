@@ -1,8 +1,20 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_putnbr.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mbelorge <mbelorge@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2020/01/03 16:14:34 by mbelorge          #+#    #+#             */
+/*   Updated: 2020/01/03 16:14:36 by mbelorge         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "libft.h"
 
-void	ft_putnbr(int nb)
+void				ft_putnbr(int nb)
 {
-	unsigned int nombre;
+	unsigned int	nombre;
 
 	nombre = nb;
 	if (nb < 0)

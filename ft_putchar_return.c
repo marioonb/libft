@@ -1,18 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putchar.c                                       :+:      :+:    :+:   */
+/*   ft_putchar_return.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mbelorge <mbelorge@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/12/17 18:57:54 by mbelorge          #+#    #+#             */
-/*   Updated: 2020/01/03 17:19:14 by mbelorge         ###   ########.fr       */
+/*   Created: 2019/11/04 14:36:15 by mbelorge          #+#    #+#             */
+/*   Updated: 2020/01/29 12:30:48 by mbelorge         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_putchar(char c)
+int	ft_putchar_return(char c)
 {
 	write(1, &c, 1);
+	return (1);
 }
